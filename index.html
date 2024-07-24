@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>СЕРТИФИКАТ</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Georgia:ital,wght@0,400;0,700;1,400&display=swap');
+
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #ffffff;
+            padding: 20px;
+            background: url('rotated_image.png') no-repeat center center;
+            background-size: cover;
+        }
+        .certificate {
+            border: 15px solid #D4AF37;
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 1200px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+            backdrop-filter: blur(10px);
+        }
+        .certificate:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 5px solid #002060;
+            border-radius: 15px;
+            margin: 15px;
+            pointer-events: none;
+        }
+        header, .content-footer, footer {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        header h1 {
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 3em;
+            color: #002060;
+            margin: 30px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        header h2 {
+            font-family: 'Georgia', serif;
+            text-transform: uppercase;
+            font-size: 1.5em;
+            color: #000000;
+            margin: 20px 0;
+        }
+        .main-content {
+            text-align: center;
+            margin: 40px 0;
+        }
+        .main-content .recipient-name {
+            font-family: 'Pacifico', cursive;
+            font-size: 3.5em;
+            color: #002060;
+            margin: 30px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .main-content .achievement-description {
+            font-family: 'Georgia', serif;
+            font-size: 1.25em;
+            color: #000000;
+            margin: 30px 0;
+        }
+        .signature {
+            display: flex;
+            justify-content: space-between;
+            margin: 40px 0;
+        }
+        .signature div {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .signature div .name {
+            font-family: 'Georgia', serif;
+            text-transform: uppercase;
+            font-size: 1.2em;
+            color: #002060;
+            margin: 10px 0;
+        }
+        .signature div .title {
+            font-family: 'Georgia', serif;
+            text-transform: uppercase;
+            font-size: 1.2em;
+            color: #002060;
+            margin: 10px 0;
+        }
+        .botanical {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            background: url('botanical-elements.png') no-repeat center center;
+            background-size: cover;
+            opacity: 0.2; /* Adjust opacity as needed */
+        }
+        .ribbon-seal {
+            text-align: center;
+            margin: 40px 0;
+        }
+        .ribbon-seal img {
+            max-width: 150px;
+        }
+        .legal-footer {
+            font-family: 'Georgia', serif;
+            font-size: 0.75em;
+            color: #000000;
+            text-align: center;
+            padding: 10px;
+            border-top: 1px solid #D4AF37;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="certificate" id="certificate">
+        <div class="botanical"></div>
+        <header>
+            <h1>СЕРТИФИКАТ НА СКИДКУ 50%</h1>
+            <h2>ДАННЫМ СЕРТИФИКАТОМ НАГРАЖДАЕТСЯ</h2>
+        </header>
+        <div class="main-content">
+            <div class="recipient-name" id="recipient-name"></div>
+            <div class="achievement-description">Настоящий сертификат предоставляет скидку в размере 50% на одну сессию групповой игры 'Лила', проводимую как в онлайн, так и в офлайн форматах</div>
+        </div>
+        <div class="content-footer">
+            <div class="signature">
+                <div>
+                    <div class="name">24 ИЮЛЯ 2024 Г.</div>
+                    <div class="title">@leelaselfawareness</div>
+                </div>
+                <div>
+                    <div class="name">АЙГЕРИМ ТАСТАНОВА</div>
+                    <div class="title">МАСТЕР ЛИЛА</div>
+                </div>
+            </div>
+            <div class="ribbon-seal">
+                <img src="ribbon-seal.png" alt="Ribbon and Seal">
+            </div>
+        </div>
+        <footer class="legal-footer">
+            © 2024 Leela Self Awareness. Сертификат на скидку является именным, одноразовым и действителен до 31 декабря 2024 года. Он не подлежит передаче другим лицам и не может быть использован в комбинации с другими сертификатами, промокодами или скидками. После истечения срока действия сертификат становится недействительным. Администрация оставляет за собой право изменять условия использования без предварительного уведомления.
+        </footer>
+    </div>
+    <script>
+        function changeName(name) {
+            document.getElementById('recipient-name').innerText = name;
+        }
+
+        // Check the URL hash on page load
+        window.onload = function() {
+            if (window.location.hash === '#aimasphere') {
+                changeName('Айман @aimasphere');
+            } 
+            else if (window.location.hash === '#diana_akkulieva') {
+                changeName('Диана @diana_akkulieva Аккулиева');
+            }
+            else
+            {
+                document.getElementById('certificate').style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
